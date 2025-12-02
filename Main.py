@@ -101,21 +101,22 @@ while True and opc1 != 9:
         
         case 6:
             opc2 = 0
-            opc2 = Val.vOpciones("Ingrese una opción: ", 1, 5, menus.menuSolicitudes)
+            while opc2 != 5:
+                opc2 = Val.vOpciones("Ingrese una opción: ", 1, 5, menus.menuSolicitudes)
 
-            match opc2:
-                case 1:
-                    fSolicitudes.listarSolicitudes()
-                case 2:
-                    fSolicitudes.SolicitarDatos()
-                case 3:
-                    fSolicitudes.VerEstado() 
-                case 4:
-                    fSolicitudes.modificarAsuntoSolicitud()
-                case 5:
-                    fSolicitudes.modificarEstadoSolicitud()
-                case 6:
-                    print("Regresando...")
+                match opc2:
+                    case 1:
+                        fSolicitudes.listarSolicitudes()
+                    case 2:
+                        fSolicitudes.SolicitarDatos()
+                    case 3:
+                        fSolicitudes.VerEstado() 
+                    case 4:
+                        fSolicitudes.modificarAsuntoSolicitud()
+                    case 5:
+                        fSolicitudes.modificarEstadoSolicitud()
+                    case 6:
+                        print("Regresando...")
         
         case 9:
             print("   Saliendo...")
