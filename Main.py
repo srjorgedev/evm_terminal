@@ -25,7 +25,7 @@ limpiar()
 
 opc1 = 100
 while True and opc1 != 9:
-    opc1 = Val._SelectMenu("    Opcion: ", Menu.pricipal, 1, 9)
+    opc1 = Val._SelectMenu("    Seleccione una opción: ", Menu.pricipal, 1, 9)
 
     match opc1:
         case 1:
@@ -72,7 +72,7 @@ while True and opc1 != 9:
             opc13 = 100
 
             while opc13 != 6:
-                opc13 = Val._SelectMenu("    Opcion: ", _Usuarios._Usuarios, 1, 6)
+                opc13 = Val._SelectMenu("    Seleccione una opción: ", _Usuarios._Usuarios, 1, 6)
                 match opc13:
                     case 1:
                         fUsuarios.createUser()

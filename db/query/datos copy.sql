@@ -34,56 +34,81 @@ INSERT INTO marca (codigo,nombre) VALUES
 ('SEAT','SEAT');
 
 INSERT INTO modelo (codigo,nombre, periodo, marca) VALUES
-('TOY1','Toyota Modelo 1', "2024", "TOY"),
-('TOY2','Toyota Modelo 2', "2023", "TOY"),
-('NIS1','Nissan Modelo 1', "2024", "NIS"),
-('NIS2','Nissan Modelo 2', "2023", "NIS"),
-('FOR1','Ford Modelo 1', "2024", "FOR"),
-('FOR2','Ford Modelo 2', "2023", "FOR"),
-('CHE1','Chevrolet Modelo 1', "2024", "CHE"),
-('CHE2','Chevrolet Modelo 2', "2023", "CHE"),
-('VW1','Volkswagen Modelo 1', "2024", "VW"),
-('VW2','Volkswagen Modelo 2', "2023", "VW"),
-('HON1','Honda Modelo 1', "2024", "HON"),
-('HON2','Honda Modelo 2', "2023", "HON"),
-('HYU1','Hyundai Modelo 1', "2024", "HYU"),
-('HYU2','Hyundai Modelo 2', "2023", "HYU"),
-('KIA1','Kia Modelo 1', "2024", "KIA"),
-('KIA2','Kia Modelo 2', "2023", "KIA"),
-('MAZ1','Mazda Modelo 1', "2024", "MAZ"),
-('MAZ2','Mazda Modelo 2', "2023", "MAZ"),
-('BMW1','BMW Modelo 1', "2024", "BMW"),
-('BMW2','BMW Modelo 2', "2023", "BMW"),
-('AUD1','Audi Modelo 1', "2024", "AUD"),
-('AUD2','Audi Modelo 2', "2023", "AUD"),
-('MER1','Mercedes-Benz Modelo 1', "2024", "MER"),
-('MER2','Mercedes-Benz Modelo 2', "2023", "MER"),
-('PEU1','Peugeot Modelo 1', "2024", "PEU"),
-('PEU2','Peugeot Modelo 2', "2023", "PEU"),
-('REN1','Renault Modelo 1', "2024", "REN"),
-('REN2','Renault Modelo 2', "2023", "REN"),
-('SUZ1','Suzuki Modelo 1', "2024", "SUZ"),
-('SUZ2','Suzuki Modelo 2', "2023", "SUZ"),
-('MIT1','Mitsubishi Modelo 1', "2024", "MIT"),
-('MIT2','Mitsubishi Modelo 2', "2023", "MIT"),
-('VOL1','Volvo Modelo 1', "2024", "VOL"),
-('VOL2','Volvo Modelo 2', "2023", "VOL"),
-('RAM1','RAM Modelo 1', "2024", "RAM"),
-('RAM2','RAM Modelo 2', "2023", "RAM"),
-('JEE1','Jeep Modelo 1', "2024", "JEE"),
-('JEE2','Jeep Modelo 2', "2023", "JEE"),
-('TES1','Tesla Modelo 1', "2024", "TES"),
-('TES2','Tesla Modelo 2', "2023", "TES"),
-('BYD1','BYD Modelo 1', "2024", "BYD"),
-('BYD2','BYD Modelo 2', "2023", "BYD"),
-('GMC1','GMC Modelo 1', "2024", "GMC"),
-('GMC2','GMC Modelo 2', "2023", "GMC"),
-('ISU1','Isuzu Modelo 1', "2024", "ISU"),
-('ISU2','Isuzu Modelo 2', "2023", "ISU"),
-('FIT1','Fiat Modelo 1', "2024", "FIAT"),
-('FIT2','Fiat Modelo 2', "2023", "FIAT"),
-('SET1','SEAT Modelo 1', "2024", "SEAT"),
-('SET2','SEAT Modelo 2', "2023", "SEAT");
+('TOY1','Toyota Corolla', "2024", "TOY"),
+('TOY2','Toyota RAV4', "2023", "TOY"),
+
+('NIS1','Nissan Sentra', "2024", "NIS"),
+('NIS2','Nissan Versa', "2023", "NIS"),
+
+('FOR1','Ford Ranger', "2024", "FOR"),
+('FOR2','Ford Explorer', "2023", "FOR"),
+
+('CHE1','Chevrolet Silverado', "2024", "CHE"),
+('CHE2','Chevrolet Equinox', "2023", "CHE"),
+
+('VW1','Volkswagen Jetta', "2024", "VW"),
+('VW2','Volkswagen Tiguan', "2023", "VW"),
+
+('HON1','Honda Civic', "2024", "HON"),
+('HON2','Honda CR-V', "2023", "HON"),
+
+('HYU1','Hyundai Tucson', "2024", "HYU"),
+('HYU2','Hyundai Elantra', "2023", "HYU"),
+
+('KIA1','Kia Sportage', "2024", "KIA"),
+('KIA2','Kia Rio', "2023", "KIA"),
+
+('MAZ1','Mazda CX-5', "2024", "MAZ"),
+('MAZ2','Mazda 3', "2023", "MAZ"),
+
+('BMW1','BMW X3', "2024", "BMW"),
+('BMW2','BMW Serie 3', "2023", "BMW"),
+
+('AUD1','Audi Q5', "2024", "AUD"),
+('AUD2','Audi A4', "2023", "AUD"),
+
+('MER1','Mercedes-Benz GLC', "2024", "MER"),
+('MER2','Mercedes-Benz Clase C', "2023", "MER"),
+
+('PEU1','Peugeot 3008', "2024", "PEU"),
+('PEU2','Peugeot 208', "2023", "PEU"),
+
+('REN1','Renault Koleos', "2024", "REN"),
+('REN2','Renault Duster', "2023", "REN"),
+
+('SUZ1','Suzuki Vitara', "2024", "SUZ"),
+('SUZ2','Suzuki Swift', "2023", "SUZ"),
+
+('MIT1','Mitsubishi Outlander', "2024", "MIT"),
+('MIT2','Mitsubishi Mirage', "2023", "MIT"),
+
+('VOL1','Volvo XC60', "2024", "VOL"),
+('VOL2','Volvo XC40', "2023", "VOL"),
+
+('RAM1','RAM 1500', "2024", "RAM"),
+('RAM2','RAM 700', "2023", "RAM"),
+
+('JEE1','Jeep Compass', "2024", "JEE"),
+('JEE2','Jeep Renegade', "2023", "JEE"),
+
+('TES1','Tesla Model 3', "2024", "TES"),
+('TES2','Tesla Model Y', "2023", "TES"),
+
+('BYD1','BYD Yuan Plus (Atto 3)', "2024", "BYD"),
+('BYD2','BYD Dolphin', "2023", "BYD"),
+
+('GMC1','GMC Terrain', "2024", "GMC"),
+('GMC2','GMC Acadia', "2023", "GMC"),
+
+('ISU1','Isuzu D-Max', "2024", "ISU"),
+('ISU2','Isuzu MU-X', "2023", "ISU"),
+
+('FIT1','Fiat Pulse', "2024", "FIAT"),
+('FIT2','Fiat Argo', "2023", "FIAT"),
+
+('SET1','SEAT León', "2024", "SEAT"),
+('SET2','SEAT Ibiza', "2023", "SEAT")
+
 
 INSERT INTO edo_mantenimiento (descripcion) VALUES
 ('Pendiente'),
@@ -200,31 +225,31 @@ INSERT INTO tipo_observacion (codigo,descripcion, tipo_mantenimiento) VALUES
 ('OBS025','Mantenimiento completo', 'PREV');
 
 INSERT INTO empleado (nombrePila, apdPaterno, apdMaterno, tipo_empleado) VALUES
-('Nombre1', "Apellido1", "Materno1", "LIM"),
-('Nombre2', "Apellido2", "Materno2", "LIM"),
-('Nombre3', "Apellido3", "Materno3", "ADM"),
-('Nombre4', "Apellido4", "Materno4", "SEG"),
-('Nombre5', "Apellido5", "Materno5", "CON"),
-('Nombre6', "Apellido6", "Materno6", "LIM"),
-('Nombre7', "Apellido7", "Materno7", "GER"),
-('Nombre8', "Apellido8", "Materno8", "ADM"),
-('Nombre9', "Apellido9", "Materno9", "ASD"),
-('Nombre10', "Apellido10", "Materno10", "ADM"),
-('Nombre11', "Apellido11", "Materno11", "CON"),
-('Nombre12', "Apellido12", "Materno12", "CON"),
-('Nombre13', "Apellido13", "Materno13", "SUP"),
-('Nombre14', "Apellido14", "Materno14", "SEG"),
-('Nombre15', "Apellido15", "Materno15", "SUP"),
-('Nombre16', "Apellido16", "Materno16", "SEG"),
-('Nombre17', "Apellido17", "Materno17", "ADM"),
-('Nombre18', "Apellido18", "Materno18", "SEG"),
-('Nombre19', "Apellido19", "Materno19", "GER"),
-('Nombre20', "Apellido20", "Materno20", "TEC"),
-('Nombre21', "Apellido21", "Materno21", "ASD"),
-('Nombre22', "Apellido22", "Materno22", "SEG"),
-('Nombre23', "Apellido23", "Materno23", "TEC"),
-('Nombre24', "Apellido24", "Materno24", "GER"),
-('Nombre25', "Apellido25", "Materno25", "ADM");
+('María Fernanda', "López", "Guzmán", 48392),
+('José Antonio', "Ramírez", "Castañeda", 12947),
+('Karla Isabel', "Mendoza", "Ruelas", 90415),
+('Luis Alberto', "Hernández", "Paredes", 57302),
+('Diana Paola', "Castro", "Ruiz", 88741),
+('Miguel Ángel', "García", "Sandoval", 21658),
+('Ricardo Daniel', "Soto", "Mejía", 64092),
+('Alejandra", "Martínez", "Beltrán", 39841),
+('Raúl Esteban', "Flores", "Higuera", 55003),
+('Patricia Elena', "Gómez", "Plata", 76291),
+('Jorge Iván', "Cortés", "Aguilar", 18574),
+('Andrea Lucía', "Pineda", "Moreno", 42966),
+('Sergio Eduardo', "Salas", "Valencia", 97412),
+('Marisol", "Ortiz", "Benavides", 30158),
+('Fernando", "Acosta", "Licea", 69047),
+('Gabriela", "Núñez", "Quiroz", 81234),
+('Daniel Alejandro', "Vargas", "Téllez", 55789),
+('Brenda Yazmín', "Reyes", "Camarillo", 14277),
+('Héctor Manuel', "Ibarra", "Ochoa", 93561),
+('Óscar Iván', "Torres", "Zavala", 77029),
+('Liliana Sofía', "Campos", "Miramontes", 66384),
+('Carlos Enrique', "Pérez", "Larios", 24407),
+('Jonathan David', "Miranda", "Uribe", 98133),
+('Verónica Alejandra', "Ruelas", "Montoya", 50812),
+('Marco Tulio', "Silva", "Velázquez", 39921);
 
 UPDATE empleado 
 SET nombrePila = "Jorge Roque",

@@ -15,27 +15,6 @@ conexion = mysql.connector.connect(
     database="evm_db"
 )
 
-'''
-////Codigo verificacion de hash de password
-entered_password = input("Contraseña: ").encode('utf-8')
-stored_hash = resultado_sql[0]["password_hash"].encode('utf-8')
-
-if bcrypt.checkpw(entered_password, stored_hash):
-    print("Login correcto")
-else:
-    print("Contraseña incorrecta")
-
- #000
- if bcrypt.checkpw(passwordIngresada.encode('utf-8'), hash_guardado):
-    print("Correcto")
-else:
-    print("Incorrecto")
-
-    '''
-'''
-def __init__(self, numEmpleado, nombre, activo):
-'''
-
 
 def createUser():
     print("    --REGISTRAR USUARIO--")
@@ -71,7 +50,7 @@ def createUser():
         match opcEmpleado:
             case 1:
                 codigo = str(random.randint(10000, 99999))
-                descripcion = "     Administrador"
+                descripcion = "Administrador"
                 print("Tipo de empleado: " + descripcion)
                 while True:
                     password = input("Cree una contraseña: ")
@@ -104,6 +83,65 @@ def createUser():
                         codigoLic = "A"
                         print("    Eligio la opcion de licencia " + codigoLic + ".")
                         descripcionLic = "Automovilista"
+                        desMod5 = input("         Es la opcion de licencia correcta?   (s/n): ").strip().lower()
+                        if desMod5 != 's':
+                            licencias()
+                            opclicencia = val._IntRange("   Ingrese una la opcion de Licencia correcta: ", 1, 5)
+                            match opclicencia:
+                                case 1:
+                                    codigoLic = "A"
+                                    print("    Eligio la opcion de licencia " + codigoLic + ".")
+                                    descripcionLic = "Automovilista"
+                                case 2:
+                                    codigoLic = "B"
+                                    print("    Eligio la opcion de licencia " + codigoLic + ".")
+                                    descripcionLic = "Taxis y Aplicaciones"
+                                case 3:
+                                    codigoLic = "C"
+                                    print("    Eligio la opcion de licencia " + codigoLic + ".")
+                                    descripcionLic = "Transporte público"
+                                case 4:
+                                    codigoLic = "D"
+                                    print("    Eligio la opcion de licencia " + codigoLic + ".")
+                                    descripcionLic = "Transporte de carga"
+                                case 5:
+                                    codigoLic = "E"
+                                    print("    Eligio la opcion de licencia " + codigoLic + ".")
+                                    descripcionLic = "Servicios especializados y carga"
+                                    print()
+                                    while True:
+                                        numeroLicencia = input("   Ingrese su numero de licencia: ")
+                                        if val.valLicencia(numeroLicencia):
+                                            print("  Número de licencia válido.")
+                                            break
+                                        else:
+                                            print(
+                                                "    Licencia inválida. Debe tener el formato: BC + 9 dígitos. Ejemplo: BC060759162"
+                                            )
+                                    exp = val.val_exp()
+                                    ven = val.val_ven(exp)
+                                    while True:
+                                        password = input("Cree una contraseña: ")
+                                        if val.validate_password(password):
+                                            password = password.encode('utf-8')
+                                            hashed = bcrypt.hashpw(password, bcrypt.gensalt())
+                                            print(" Contraseña Valida")
+                                            break
+                                        else:
+                                            print(" Contraseña Invalida. Intente de nuevo")
+                                            print(" La contraseña debe cumplir con los siguientes requisitos para ser válida:")
+                                            print(" 1. Tener al menos 8 caracteres.")
+                                            print(" 2. Incluir al menos una letra mayúscula (A-Z).")
+                                            print(" 3. Incluir al menos una letra minúscula (a-z).")
+                                            print(" 4. Incluir al menos un número (0-9).")
+                                    email = val.vEmail("Ingrese su Correo Electronico: ")
+                                    newTipo = TipoEmpleado(codigo, descripcion)
+                                    newUser = Usuario(None, nombrePila, apdPaterno, apdMaterno, newTipo.get_codigo(), 1, hashed, email)
+                                    newTel = Telefono(None, telefono ,None)
+                                    newTLic = TipoLicencia(None, codigoLic, descripcionLic)
+                                    newLic = Licencia(numeroLicencia, exp, ven, None, newTLic.get_codigoLic())
+                                    crudUsers.Create(newUser, newTipo, newTel, newTLic, newLic)
+                                    return
                     case 2:
                         codigoLic = "B"
                         print("    Eligio la opcion de licencia " + codigoLic + ".")
@@ -119,7 +157,7 @@ def createUser():
                     case 5:
                         codigoLic = "E"
                         print("    Eligio la opcion de licencia " + codigoLic + ".")
-                        descripcionLic = "Servicios especializados  y carga"
+                        descripcionLic = "Servicios especializados y carga"
                 print()
                 while True:
                     numeroLicencia = input("   Ingrese su numero de licencia: ")

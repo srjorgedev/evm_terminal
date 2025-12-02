@@ -104,7 +104,7 @@ def Create(newUser, newTipo, newTel, newTLic, newLic):
 
     miConn.conexion.commit()
     print("     ID Telefono", idTelefono)
-    print("     Registro Exitoso")
+    print("     Empleado Resgistrado con Exito")
 
 
 def Create2(newUser, newTipo, newTel):
@@ -161,7 +161,7 @@ def Create2(newUser, newTipo, newTel):
     idTelefono = cursor.lastrowid
     miConn.conexion.commit()
     print("     ID Telefono", idTelefono)
-    print("     Registro Exitoso")
+    print("     Empleado Resgistrado con Exito")
 
 
 #Read select
@@ -457,7 +457,7 @@ def mostrar_choferes(conexion):
     cursor = conexion.cursor()
 
     query = """
-    SELECT CONCAT(e.nombrePila, ' ', e.apdPaterno, ' ', e.apdMaterno) as Nombre,
+    SELECT CONCAT_WS(' ', e.nombrePila, e.apdPaterno, e.apdMaterno) as Nombre,
     te.descripcion as "Tipo de empleado", -- "
     l.numero as "Numero de licencia", -- "
     tl.codigo as "Clase de licencia", -- "
@@ -495,7 +495,7 @@ def empleados_contactos(conexion):
 
     query = """
     SELECT e.numero as Numero,
-    CONCAT(e.nombrePila, ' ', e.apdPaterno, ' ', e.apdMaterno) as Nombre,
+    CONCAT_WS(' ', e.nombrePila, e.apdPaterno, e.apdMaterno) as Nombre,
     e.email as "Correo Electronico", -- "
     t.numTelefono as "Numero Telefonico" -- "
     from empleado as e
