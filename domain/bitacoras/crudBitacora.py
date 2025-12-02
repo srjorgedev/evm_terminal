@@ -53,10 +53,11 @@ def leerCompleta(num: int):
         LEFT JOIN modelo AS mol ON vehi.modelo = mol.codigo
         LEFT JOIN empleado_bitacora AS eb ON eb.bitacora = bit.numero
         LEFT JOIN empleado AS em ON eb.empleado = em.numero
-        WHERE bit.numero = 5
+        WHERE bit.numero = %s
     """
     
-    datos = conn.lista(query, num)
+    datos = conn.lista(query, (num,))
+    return datos
 
 
 def bitacoraSinEntrada():

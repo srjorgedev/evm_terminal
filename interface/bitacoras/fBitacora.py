@@ -12,7 +12,7 @@ def lista():
         print("-"*espacios + titulo + "-"*espacios)
         print()
 
-        print(f"{'  N°':<4}{'Asunto':<15}{'Destino':<15}{'Fecha Salida':<15}{'Fecha Entrada':<15}\n")
+        print(f"{'  N°':<6}{'Asunto':<15}{'Destino':<15}{'Fecha Salida':<15}{'Fecha Entrada':<15}\n")
 
         datos = CRUD.listaGeneral()
         if datos == []:
@@ -47,7 +47,19 @@ def lista():
             if opc == 0: break;
         if opc == 1:
             elec = Val.IntListRange("Numero de bitacora: ", lista_id)
-            # CRUD.leerCompleta(elec)
+            bit = CRUD.leerCompleta(elec)
+            print("-"*64)
+            
+            print("Solicitante: ", bit[0][0])
+            print("Autorizado por: ", bit[0][1])
+            
+            print("-"*64)
+            print("Acciones:")
+            print("1. Archivar")
+            print("2. Modificar")
+            print("0. Salir")
+
+            opc = Val.IntRange("Opcion: ", 0, 2)
         if opc == 2:
             pass            
             
