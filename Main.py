@@ -68,6 +68,8 @@ while True and opc1 != 9:
                     case 4:
                         fVehiculo.borrarVehiculo()
                     case 5:
+                        fVehiculo.tipolicencia()
+                    case 6:
                         print("Regresando...")
 
 
@@ -107,10 +109,12 @@ while True and opc1 != 9:
                 case 2:
                     fSolicitudes.SolicitarDatos()
                 case 3:
-                    fSolicitudes.modificarAsuntoSolicitud()
+                    fSolicitudes.VerEstado() 
                 case 4:
-                    fSolicitudes.modificarEstadoSolicitud()
+                    fSolicitudes.modificarAsuntoSolicitud()
                 case 5:
+                    fSolicitudes.modificarEstadoSolicitud()
+                case 6:
                     print("Regresando...")
         
         case 9:

@@ -7,6 +7,10 @@ def listarVehiculos():
     print("- - - Listado de Vehiculos - - -")
     crudVehiculo.listarVehiculos()
     
+def tipolicencia():
+    print("- - - Tiposs de licencia de Vehiculos - - -")
+    crudVehiculo.tipolicencia()
+    
 def SolicitarDatos():
 
 

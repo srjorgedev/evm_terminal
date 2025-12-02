@@ -8,6 +8,11 @@ def listarSolicitudes():
     print("- - - Listado de Solicitudes - - -")
     crudSolicitudes.listarSolicitudes()
     
+def VerEstado():
+    print("- - - Listado de Solicitudes - - -")
+    crudSolicitudes.listarEstado()
+
+    
     
 def SolicitarDatos():
     print(" - - - Agregar Solicitud - - - ")

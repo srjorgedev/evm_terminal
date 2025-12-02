@@ -10,9 +10,9 @@ class conn:
             host="localhost",
             port=3306,
             user="root",
-            password="root",
+            password="",
             db="evm_db")
-            print("conectado")
+            
         except Error as variable:
             print("error en conexion")
             print(variable)
@@ -24,7 +24,7 @@ class conn:
                 cursor = self.conexion.cursor()
                 cursor.execute(comando)
                 resultados = cursor.fetchall()
-                print("   Listado correcto")
+               
                 return resultados
             except Error as valError:
                 print("   Error al leer datos")

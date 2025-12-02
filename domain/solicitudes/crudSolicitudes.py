@@ -56,7 +56,43 @@ def listarSolicitudes():
 
 
 
+def listarEstado():
+    miConn = conn()  
+#consulta 7
+    comando = """
+    SELECT 
+        s.numero AS ID, 
+        CONCAT(e.nombrePila, ' ', e.apdPaterno) AS Solicitante, 
+        s.asunto AS Asunto, 
+        s.fechaSolicitada AS Fecha, 
+        s.horaSolicitada AS Hora, 
+        ed.descripcion AS Estado
+    FROM solicitud AS s
+    INNER JOIN empleado AS e ON s.solicitante = e.numero
+    INNER JOIN edo_solicitud AS ed ON s.edo_solicitud = ed.numero
+    ORDER BY s.numero;
+    """
 
+    lista = miConn.lista(comando)
+
+    print("\n--- LISTADO DE SOLICITUDES ---")
+
+    if not lista:
+        print("No hay solicitudes registradas.")
+        return []
+
+    # Encabezado
+    print(f"{'ID':<5} {'Solicitante':<25} {'Asunto':<30} {'Fecha':<12} {'Hora':<10} {'Estado':<20}")
+    print("-" * 110)
+
+    # Filas
+    for fila in lista:
+        ID, solicitante, asunto, fecha, hora, estado = fila
+        print(f"{ID:<5} {solicitante:<25} {asunto:<30} {str(fecha):<12} {str(hora):<10} {estado:<20}")
+
+    print("-" * 110)
+
+    return lista
 
 
 def agregarSolicitud(nuevaSolicitud):

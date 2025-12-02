@@ -64,6 +64,44 @@ def agregarVehiculo(nuevoVehiculo):
 
     return lastid
 
+def tipolicencia():
+    miConn = conn()  
+#consulta 3
+    comando = """
+    SELECT 
+        v.matricula AS Matricula, 
+        m.nombre AS Marca, 
+        md.nombre AS Modelo, 
+        v.proposito AS Proposito, 
+        tl.descripcion AS TipoLicencia
+    FROM vehiculo AS v
+    INNER JOIN tipo_licencia AS tl ON v.licencia_requerida = tl.codigo
+    INNER JOIN marca AS m ON m.codigo = v.marca
+    INNER JOIN modelo AS md ON md.codigo = v.modelo;
+    """
+
+    lista = miConn.lista(comando)
+
+    print("\n--- LISTADO DE VEHÍCULOS CON TIPO DE LICENCIA ---")
+
+    if not lista:
+        print("No hay vehículos registrados.")
+        return []
+
+    # Encabezado
+    print(f"{'Matrícula':<12} {'Marca':<15} {'Modelo':<15} {'Propósito':<25} {'Tipo Licencia':<20}")
+    print("-" * 90)
+
+    # Filas
+    for fila in lista:
+        matricula, marca, modelo, proposito, tipo_licencia = fila
+        print(f"{matricula:<12} {marca:<15} {modelo:<15} {proposito:<25} {tipo_licencia:<20}")
+
+    print("-" * 90)
+
+    return lista
+
+
 
 def borrarVehiculo(existeVehiculo):
     miConn = conn()
