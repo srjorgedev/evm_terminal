@@ -338,13 +338,14 @@ def buscarTipoEmpleado():
     miConn = conn()
 
     while True:
-        tipoCod = val.vInt("Ingrese el código del Tipo de Empleado: ")
+        tipoCod = val.vInt("    Ingrese el código del Tipo de Empleado: ")
+        print()
 
         comando = "SELECT * FROM tipo_empleado WHERE codigo = %s"
         listado = miConn.lista_param(comando, (tipoCod,))
 
         if len(listado) == 1:
-            print("\n   Tipo de empleado encontrado:\n")
+            print("\n    Tipo de empleado encontrado:\n")
             fila = listado[0]
 
             obj = TipoEmpleado(
@@ -352,30 +353,31 @@ def buscarTipoEmpleado():
                 fila[1]   # descripción
             )
 
-            print(f"Código: {obj.get_codigo()} - Descripción: {obj.get_descripcion()}")
+            print(f"    Código: {obj.get_codigo()} - Descripción: {obj.get_descripcion()}")
 
             return obj   # regresamos el tipo encontrado
 
         else:
-            print("\n   ERROR: Ese Tipo de Empleado NO existe. Intente nuevamente.\n")
+            print("\n    ERROR: Ese Tipo de Empleado NO existe. Intente nuevamente.\n")
 
 
 def buscar3():
     miConn = conn()
 
     while True:
-        numEmpleado = val.vInt("Ingrese el número de Empleado que desea modificar: ")
+        numEmpleado = val.vInt("     Ingrese el número de Empleado que desea modificar: ")
+        print()
 
         comando = "SELECT * FROM empleado WHERE numero = %s"
         listado = miConn.lista_param(comando, (numEmpleado,))
 
         if len(listado) == 1:
-            print("\n   Empleado encontrado:\n")
+            print("\n    Empleado encontrado:\n")
             fila = listado[0]
 
             obj = Usuario(
-                fila[0],  # numero
-                fila[1],  # nombre
+                fila[0],
+                fila[1],
                 fila[2],
                 fila[3],
                 fila[4],
@@ -385,9 +387,10 @@ def buscar3():
             )
 
             print(obj)
-            return obj   
+            return obj
         else:
             print("\n   ERROR: Ese empleado NO existe. Intente nuevamente.\n")
+            input("\n   Presione ENTER para continuar...")
 
 def registrarLicencia(numEmpleado):
     miConn = conn()
@@ -459,6 +462,7 @@ def registrarLicencia(numEmpleado):
     miConn.conexion.commit()
 
     print("\n    Licencia de chofer registrada correctamente.\n")
+    input("\n   Presione ENTER para continuar...")
     return True
 
 
