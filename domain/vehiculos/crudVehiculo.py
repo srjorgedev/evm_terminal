@@ -1,5 +1,7 @@
 from db.connV import conn
 from domain.vehiculos import ClaseVehiculo as Vehiculo
+from interface.usuarios.Menu import licencias2
+from interface.usuarios import val
 
 def listarVehiculos():
     miConn = conn()
@@ -101,13 +103,12 @@ def tipolicencia():
 
     if not lista:
         print("No hay vehículos registrados.")
-        input("\n   Presione ENTER para continuar...")
         return []
 
     # Encabezado
     print(f"{'Matrícula':<12} {'Marca':<15} {'Modelo':<15} {'Propósito':<25} {'Tipo Licencia':<20}")
     print("-" * 90)
-    input("\n   Presione ENTER para continuar...")
+
 
     # Filas
     for fila in lista:
@@ -206,12 +207,10 @@ def tipli():
 
     if not lista:
         print("No hay registros")
-        input("\n   Presione ENTER para continuar...")
         return
 
     print(f"{'NUM':<10} {'Codigo':<10} {'Descripcion':<30}")
     print("-"*45)
-    input("\n   Presione ENTER para continuar...")
 
     for numero, codigo, descripcion in lista:
         print(f"{numero:<10} {codigo:<10} {descripcion:<30}")
@@ -262,8 +261,43 @@ def nummat():
 
     print("-" * 40)
 
-    
 
+def RegistroLicencias():
+    licencias2()
+    opclicencia = val._IntRange("   Ingrese una la opcion de Licencia correcta: ", 1, 5)
+    print()
+    match opclicencia:
+        case 1:
+            codigoLic = "A"
+            print("    Eligio la opcion de licencia " + codigoLic + ".")
+            print()
+            descripcionLic = "Automovilista"
+            return codigoLic
+        case 2:
+            codigoLic = "B"
+            print("    Eligio la opcion de licencia " + codigoLic + ".")
+            print()
+            descripcionLic = "Taxis y Aplicaciones"
+            return codigoLic
+        case 3:
+            codigoLic = "C"
+            print("    Eligio la opcion de licencia " + codigoLic + ".")
+            print()
+            descripcionLic = "Transporte público"
+            return codigoLic
+        case 4:
+            codigoLic = "D"
+            print("    Eligio la opcion de licencia " + codigoLic + ".")
+            print()
+            descripcionLic = "Transporte de carga"
+            return codigoLic
+        case 5:
+            codigoLic = "E"
+            print("    Eligio la opcion de licencia " + codigoLic + ".")
+            print()
+            descripcionLic = "Servicios especializados y carga"
+            return codigoLic
+            print()
 
 
 

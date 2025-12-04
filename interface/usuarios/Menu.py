@@ -65,6 +65,32 @@ def licencias():
     )
     print("---------------------------------------------------------------------------------------------------------------------------------------------------")
 
+def licencias2():
+    print()
+    print("   Seleccione el tipo de licencia necesaria para el vehiculo: ")
+    print("---------------------------------------------------------------------------------------------------------------------------------------------------")
+    print(
+        "   1. Tipo A (Automovilista): Para la conducción de vehículos particulares, como autos, camionetas y motocicletas."
+    )
+    print("---------------------------------------------------------------------------------------------------------------------------------------------------")
+    print(
+        "   2. Tipo B (Taxis y aplicaciones): Para conductores de taxis y servicios de transporte de pasajeros a través de plataformas tecnológicas."
+    )
+    print("---------------------------------------------------------------------------------------------------------------------------------------------------")
+    print(
+        "   3. Tipo C (Transporte público): Para operar vehículos de transporte colectivo de pasajeros como microbuses, minibuses y vagonetas."
+    )
+    print("---------------------------------------------------------------------------------------------------------------------------------------------------")
+    print(
+        "   4. Tipo D (Transporte de carga): Para la conducción de camiones de carga. "
+    )
+    print("---------------------------------------------------------------------------------------------------------------------------------------------------")
+    print(
+        "   5. Tipo E (Servicios especializados  y carga): Para transporte especializado, como pipas, o para carga pesada como tráileres y doble remolque. "
+    )
+    print("---------------------------------------------------------------------------------------------------------------------------------------------------")
+
+
 
 def datos():
     print("   1. Nombre")
