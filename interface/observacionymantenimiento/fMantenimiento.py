@@ -124,7 +124,8 @@ def pedirVehiculoValido():
         resultado = cursor.fetchone()
         if resultado:
             return vehiculo
-        print("❌ El número de serie NO existe, ingresa uno válido.\n")
+        print(" El número de serie NO existe, ingresa uno válido.\n")
+        input(" Presiona Enter para intentar de nuevo...")
 
 def menuMantenimientos():
     while True:

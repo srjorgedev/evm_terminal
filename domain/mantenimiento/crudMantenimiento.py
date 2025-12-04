@@ -48,13 +48,12 @@ def lista():
     miConn = Conn()
     
     try:
-        comando = "SELECT folio, razon, fechaProgramada, comentarios, tipoMantenimiento, vehiculo, estadoMantenimiento FROM MANTENIMIENTO"
+        comando = "SELECT folio, razon, importancia, fechaProgramada, comentarios, tipoMantenimiento, vehiculo, estadoMantenimiento FROM MANTENIMIENTO"
         listado = miConn.lista(comando)
         lista = []
         for fila in listado:
             m = Mantenimiento(
                 fila[1],  # Razon
-                0,  # Estatus
                 0,  # Importancia
                 str(fila[2]),  # FechaProgramada
                 fila[3],  # Comentarios
@@ -76,7 +75,6 @@ def actualizar(objMantenimiento):
     miConn = conn()
     comando = """
         UPDATE mantenimiento SET
-        Estatus=%s,
         Importancia=%s,
         FechaProgramada=%s,
         Comentarios=%s,
@@ -85,7 +83,6 @@ def actualizar(objMantenimiento):
         WHERE Folio=%s
     """
     valores = (
-        objMantenimiento.get_estatus(),
         objMantenimiento.get_importancia(),
         objMantenimiento.get_fechaProgramada(),
         objMantenimiento.get_comentarios(),
@@ -99,10 +96,13 @@ def actualizar(objMantenimiento):
         miConn.conexion.commit()
         if cursor.rowcount == 1:
             print("Actualización de mantenimiento realizada.")
+            input("Presione Enter para continuar...")
         else:
             print("Actualización no realizada o folio no encontrado.")
+            input("Presione Enter para continuar...")
     except Exception as e:
         print("Error en conexión o actualización:")
+        input("Presione Enter para continuar...")
         print(e)
 
 
@@ -117,10 +117,13 @@ def borrar(objMantenimiento):
         miConn.conexion.commit()
         if cursor.rowcount == 1:
             print("Mantenimiento eliminado correctamente.")
+            input("Presione Enter para continuar...")
         else:
             print("El folio del mantenimiento no existe.")
+            input("Presione Enter para continuar...")
     except Exception as e:
         print("Error al eliminar mantenimiento:")
+        input("Presione Enter para continuar...")
         print(e)
 
 
@@ -142,7 +145,6 @@ def buscar(objMantenimiento):
                 fila[5],
                 fila[6],
                 fila[7],
-                fila[8],
                 fila[0]
             )
             return m
