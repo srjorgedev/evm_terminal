@@ -527,3 +527,9 @@ INSERT INTO mantenimiento (razon, fechaProgramada, comentarios, tipoMantenimient
 ('Reparación de frenos', '2024-12-01', 'Limpieza general', 1, 'UWSFGD1S7TH496T4G', 5),
 ('Reemplazo de foco', '2024-11-02', 'Verificar suspensión', 1, '42UNYM7MVX7XXVRF0', 3);
 
+UPDATE observacion
+SET tipoObservacion = 1;
+DELETE FROM tipoObservacion;
+UPDATE tipoObservacion SET descripcion = 'General' WHERE numero = 1;
+UPDATE tipoObservacion SET descripcion = 'Seguridad' WHERE numero = 2;
+UPDATE tipoObservacion SET descripcion = 'Estetica' WHERE numero = 3;

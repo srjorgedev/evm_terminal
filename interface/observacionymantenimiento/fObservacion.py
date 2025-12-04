@@ -8,12 +8,18 @@ from interface.observacionymantenimiento import fMantenimiento
 # Tipos de Observación disponibles
 TIPOS_OBSERVACION = ["General", "Seguridad", "Estetica"]
 
+MAPA_TIPO_OBS = {
+    "General": 1,
+    "Seguridad": 2,
+    "Estetica": 3
+}
+
 def pedirDatos():
     print(" ----- Registrar Observación -----")
     
     # Tipo de observación
     tipoSeleccion = val.vSeleccion("Tipo de Observación", TIPOS_OBSERVACION)
-    tipoIndice = TIPOS_OBSERVACION.index(tipoSeleccion) + 1  # FK numérico
+    tipoIndice = MAPA_TIPO_OBS[tipoSeleccion]  # FK numérico
     
     # Descripción
     descripcion = val.Str("Descripción de la Observación")

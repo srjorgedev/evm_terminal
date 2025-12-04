@@ -99,7 +99,7 @@ def actualizarMantenimiento():
 def borrarMantenimiento():
     print(" ----- Eliminar Mantenimiento -----")
     folio = val.vInt("Folio del Mantenimiento a eliminar")
-    tempM = Mantenimiento("", "", "", "", "", "", "", "", folio)
+    tempM = Mantenimiento("", "", "", "", "", "", "", folio)
     
     objM = crudMantenimiento.buscar(tempM)
     if not objM:

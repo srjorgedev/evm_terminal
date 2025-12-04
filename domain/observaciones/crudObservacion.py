@@ -10,6 +10,7 @@ def alta(obj):
     comando = "INSERT INTO observacion (descripcion, tipoObservacion, bitacora) VALUES (%s, %s, %s)"
     valores = (obj.get_descripcion(), obj.get_tipoObservacion(), obj.get_bitacoraAsociada())
     miConn.registrar_param(comando, valores)
+    
 
 # READ
 def lista():
