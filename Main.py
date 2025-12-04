@@ -101,8 +101,8 @@ while True and opc1 != 9:
 
         case 6:
             opc2 = 0
-            while opc2 != 6:
-                opc2 = Val.vOpciones("Ingrese una opción: ", 1, 6,
+            while opc2 != 7:
+                opc2 = Val.vOpciones("Ingrese una opción: ", 1, 7,
                                      menus.menuSolicitudes)
 
                 match opc2:

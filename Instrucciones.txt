@@ -1,0 +1,11 @@
+1. Crear el entorno virtual
+   - py -m venv .venv
+
+2. Instalar las siguientes librerias
+   - mysql-connector-python
+   - bcrypt
+
+3. Crear la bd
+   - Copiar el contenido de el archivo evm.sql, pegarlo en la seccion sql de phpmyadmin y ejecutar
+   - Entrar a la bd
+   - Copiar el contenido del archivo datos.sql, pegarlo en la seccion sql de phpmyadmin y ejecutar
