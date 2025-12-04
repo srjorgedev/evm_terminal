@@ -82,17 +82,24 @@ def pedirBitacoraValida(mensaje="Bitácora asociada"):
         cursor.execute("SELECT numero FROM bitacora WHERE numero = %s", (bit,))
         if cursor.fetchone():
             return bit
-        print("❌ La bitácora NO existe. Ingresa un número válido.\n")
+        print("  La bitácora NO existe. Ingresa un número válido.\n")
 
 def menuObservaciones():
     while True:
         print("\n--- MENÚ OBSERVACIONES ---")
+        print("--------------------------------------------")
         print("1. Registrar Observación")
+        print("--------------------------------------------")
         print("2. Listar Observaciones")
+        print("--------------------------------------------")
         print("3. Actualizar Observación")
+        print("--------------------------------------------")
         print("4. Eliminar Observación")
+        print("--------------------------------------------")
         print("5. Consultar Observaciones por Bitácora")
+        print("--------------------------------------------")
         print("6. Regresar al menú principal")
+        print("--------------------------------------------")
 
         opcion = val.vInt("Selecciona una opción")
 

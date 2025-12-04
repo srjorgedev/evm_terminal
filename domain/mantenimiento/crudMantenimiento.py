@@ -21,12 +21,11 @@ def alta(objMantenimiento):
     miConn = conn()
     comando = """
         INSERT INTO mantenimiento 
-        (razon, estatus, importancia, fechaProgramada, comentarios, tipo_mantenimiento, vehiculo, estadoMantenimiento)
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        (razon, importancia, fechaProgramada, comentarios, tipoMantenimiento, vehiculo, estadoMantenimiento)
+        VALUES (%s, %s, %s, %s, %s, %s, %s)
     """
     valores = (
         objMantenimiento.get_razon(),
-        objMantenimiento.get_estatus(),
         objMantenimiento.get_importancia(),
         objMantenimiento.get_fechaProgramada(),
         objMantenimiento.get_comentarios(),
@@ -49,7 +48,7 @@ def lista():
     miConn = Conn()
     
     try:
-        comando = "SELECT folio, razon, fechaProgramada, comentarios, tipo_mantenimiento, vehiculo, estadoMantenimiento FROM MANTENIMIENTO"
+        comando = "SELECT folio, razon, fechaProgramada, comentarios, tipoMantenimiento, vehiculo, estadoMantenimiento FROM MANTENIMIENTO"
         listado = miConn.lista(comando)
         lista = []
         for fila in listado:
@@ -128,7 +127,7 @@ def borrar(objMantenimiento):
 # ----- BUSCAR POR FOLIO -----
 def buscar(objMantenimiento):
     miConn = conn()
-    comando = "SELECT Folio, Razon, Estatus, Importancia, FechaProgramada, Comentarios, tipo_mantenimiento, Vehiculo, estadoMantenimiento FROM mantenimiento WHERE Folio=%s"
+    comando = "SELECT Folio, Razon, Importancia, FechaProgramada, Comentarios, tipoMantenimiento, Vehiculo, estadoMantenimiento FROM mantenimiento WHERE Folio=%s"
     valores = (objMantenimiento.get_folio(),)
     try:
         cursor = miConn.conexion.cursor()

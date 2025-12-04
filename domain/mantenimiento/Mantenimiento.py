@@ -1,10 +1,9 @@
 # Clase Mantenimiento.py
 class Mantenimiento:
 
-    def __init__(self, razon, estatus, importancia, fechaProgramada, comentarios, tipoMantenimiento, vehiculo, estadoMantenimiento, folio=0):
+    def __init__(self, razon, importancia, fechaProgramada, comentarios, tipoMantenimiento, vehiculo, estadoMantenimiento, folio=0):
         self.__folio = folio
         self.__razon = razon
-        self.__estatus = estatus
         self.__importancia = importancia
         self.__fechaProgramada = fechaProgramada
         self.__comentarios = comentarios

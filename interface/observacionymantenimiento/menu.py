@@ -3,13 +3,18 @@
 #Menu principal
 def mPrincipal():
     print("EVM - GESTIÓN EMPRESARIAL")
+    print("--------------------------------------------")
     print("1. Mantenimiento")
+    print("--------------------------------------------")
     print("2. Observaciones")
+    print("--------------------------------------------")
     print("9. Salir")
+    print("--------------------------------------------")
 
 #Mantenimiento
 def mMantenimiento():
     print(" ----- MANTENIMIENTO -----")
+    print("--------------------------------------------")
     print("   1. Solicitar mantenimiento")
     print("   2. Listar mantenimientos")
     print("   3. Actualizar Datos")

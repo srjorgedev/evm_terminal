@@ -12,7 +12,6 @@ class conn:
                 user="root",
                 password="",
                 database="evm_db")
-            print("Conectado a Enterprise Vehicle Manager")
         except Error as variable:
             print("Error en conexion")
             print(variable)

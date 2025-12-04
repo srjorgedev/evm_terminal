@@ -68,6 +68,7 @@ class Conn:
             
         except Error as error:
             log(f"[BD ERROR - REGISTRAR]: {error}")
+            input("Presione Enter para continuar...")
             return -1
             
         finally:

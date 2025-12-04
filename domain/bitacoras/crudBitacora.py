@@ -103,9 +103,9 @@ def crearSalida(bitacora: Bitacora):
                        bitacora.get_salida().get_gasolina(),
                        bitacora.get_salida().get_kilometraje(),
                        bitacora.get_salida().get_fecha())
-
+    input("Presione Enter para continuar..."    )
     return conn.registrar(query)
-
+    
 
 def crearEntrada(bitacora: Bitacora):
     conn = Conn()

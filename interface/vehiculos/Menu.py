@@ -1,5 +1,5 @@
 def menuVehiculos():
-    print("   - VEHICULOS -")
+    print("   * VEHICULOS *")
     print("--------------------------------------------")
     print("     1. Listado de vehiculos")
     print("--------------------------------------------")

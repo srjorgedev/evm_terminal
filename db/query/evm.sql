@@ -261,3 +261,5 @@ ADD CONSTRAINT fk_vehiculo_tipo
 FOREIGN KEY (licencia_requerida) REFERENCES tipo_licencia(numero);
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+ALTER TABLE mantenimiento ADD COLUMN importancia VARCHAR(10) NOT NULL;
