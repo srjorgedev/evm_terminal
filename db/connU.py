@@ -24,7 +24,7 @@ class conn:
                 cursor = self.conexion.cursor()
                 cursor.execute(comando)
                 self.conexion.commit()
-                print("   Registrado")
+                print("   registrado")
                 print("Nuevo ID:", cursor.lastrowid)
 
             except Error as valError:
@@ -76,7 +76,6 @@ class conn:
                 contador = cursor.rowcount
                 print("   Actualizado")
                 print()
-                input("\n   Presione ENTER para continuar...")
 
             except Error as valError:
                 print(valError)

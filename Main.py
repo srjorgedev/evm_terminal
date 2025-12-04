@@ -55,12 +55,10 @@ while True and opc1 != 9:
                         break
 
         case 2:
-            opc12 = 100
-
-            while opc12 != 5:
-                opc12 = Val._SelectMenu("    Opcion: ", _Vehiculos.menuVehiculos,
-                                        1, 6)
-                match opc12:
+            opc2 = 0 
+            while opc2 != 5:
+                opc2 = Val.vOpciones("Ingrese una opción: ", 1, 5, menuv.menuVehiculos)
+                match opc2:
                     case 1:
                         fVehiculo.listarVehiculos()
                     case 2:
@@ -102,8 +100,8 @@ while True and opc1 != 9:
         
         case 6:
             opc2 = 0
-            while opc2 != 5:
-                opc2 = Val.vOpciones("Ingrese una opción: ", 1, 5, menus.menuSolicitudes)
+            while opc2 != 6:
+                opc2 = Val.vOpciones("Ingrese una opción: ", 1, 6, menus.menuSolicitudes)
 
                 match opc2:
                     case 1:

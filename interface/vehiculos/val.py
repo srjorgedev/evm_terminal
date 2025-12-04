@@ -36,8 +36,8 @@ def vDatos(msg):
         if len(valor) ==0:
             print("Este campo no puede estar vacio")
         else:
-            if len(valor)<3 or len(valor) >20:
-                print("Lo solicitado debe tener entre 3 y 20 caracteres")
+            if len(valor)<2 or len(valor) >20:
+                print("Lo solicitado debe tener entre 2 y 20 caracteres")
             else:
                 return valor
         

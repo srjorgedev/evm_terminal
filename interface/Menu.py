@@ -1,5 +1,5 @@
 def pricipal():
-    print("    * EVM * ")
+    print("    Sistema EVM ")
     print("--------------------------------------------")
     print("    1. Bitacoras")
     print("--------------------------------------------")

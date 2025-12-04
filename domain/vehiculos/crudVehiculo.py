@@ -4,9 +4,7 @@ from domain.vehiculos import ClaseVehiculo as Vehiculo
 def listarVehiculos():
     miConn = conn()
     comando = """
-        SELECT numSerie, matricula, proposito, fechaAdquisicion, disponibilidad, 
-               marca, modelo, licencia_requerida 
-        FROM vehiculo
+        SELECT v.numSerie, v.matricula, v.proposito, v.fechaAdquisicion, v.disponibilidad, v.marca, v.modelo, tp.codigo as licencia_requerida FROM vehiculo as v inner join tipo_licencia as tp on tp.numero = v.licencia_requerida;
     """
     lista = miConn.lista(comando)
     
