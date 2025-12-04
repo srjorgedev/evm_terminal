@@ -23,9 +23,10 @@ def listaGeneral():
 
     return lista
 
+
 def leerCompleta(num: int):
     conn = Conn()
-    
+
     query = """
         SELECT 
             CONCAT(soli.nombrePila, ' ', soli.apdPaterno, ' ', soli.apdMaterno) AS Solicitante,
@@ -55,15 +56,15 @@ def leerCompleta(num: int):
         LEFT JOIN empleado AS em ON eb.empleado = em.numero
         WHERE bit.numero = %s
     """
-    
-    datos = conn.lista(query, (num,))
+
+    datos = conn.lista(query, (num, ))
     return datos
 
 
 def bitacoraSinEntrada():
     conn = Conn()
 
-    query = 'SELECT numControl as "Numero de control", asunto as Asunto, destino as Destino, salida as Salida, entrada as Entrada '
+    query = 'SELECT numero as "Numero de control", asunto as Asunto, destino as Destino, salida as Salida, entrada as Entrada '
     query += 'FROM bitacora WHERE entrada IS NULL AND status = 1'
     lista = conn.lista(query)
 
@@ -83,7 +84,7 @@ def bitacoraSinEntrada():
 def existe(bitacora: Bitacora):
     conn = Conn()
 
-    aux = "SELECT asunto, destino, responsable, autorizador, vehiculo, gasSalida, kmSalida, fechaSalida FROM bitacora WHERE numControl = {0}"
+    aux = "SELECT asunto, destino, responsable, autorizador, vehiculo, gasSalida, kmSalida, fechaSalida FROM bitacora WHERE numero = {0}"
     query = aux.format(bitacora.get_numControl())
 
     lista = conn.lista(query)
@@ -94,25 +95,24 @@ def existe(bitacora: Bitacora):
 def crearSalida(bitacora: Bitacora):
     conn = Conn()
 
-    aux = "INSERT INTO bitacora (asunto, destino, responsable, autorizador, vehiculo, gasSalida, kmSalida, fechaSalida) "
-    aux += "VALUES ('{0}', '{1}', {2}, {3}, '{4}', '{5}', '{6}', '{7}')"
+    aux = "INSERT INTO bitacora (asunto, destino, vehiculo, gasSalida, kmSalida, fechaSalida) "
+    aux += "VALUES ('{0}', '{1}', {2}, {3}, '{4}', '{5}')"
 
     query = aux.format(bitacora.get_asunto(), bitacora.get_destino(),
-                       bitacora.get_responsable(), bitacora.get_autorizador(),
                        bitacora.get_vehiculo(),
                        bitacora.get_salida().get_gasolina(),
                        bitacora.get_salida().get_kilometraje(),
                        bitacora.get_salida().get_fecha())
-    input("Presione Enter para continuar..."    )
+    input("Presione Enter para continuar...")
     return conn.registrar(query)
-    
+
 
 def crearEntrada(bitacora: Bitacora):
     conn = Conn()
 
     aux = "UPDATE bitacora SET gasEntrada = '{0}', kmEntrada = '{1}', fechaEntrada = '{2}', entrada = 1, "
     aux += "totalKM = {3}, kmPorLitro = {4}, gasConsumida = {5}"
-    aux += "WHERE numControl = {6}"
+    aux += "WHERE numero = {6}"
 
     query = aux.format(bitacora.get_entrada().get_gasolina(),
                        bitacora.get_entrada().get_kilometraje(),
@@ -125,13 +125,13 @@ def crearEntrada(bitacora: Bitacora):
     return conn.registrar(query)
 
 
-def baja(bitacora: Bitacora):
+def baja(num):
     conn = Conn()
 
-    aux = "UPDATE bitacora SET status = 0 "
-    aux += "WHERE numControl = {0}"
+    aux = "UPDATE bitacora SET visible = FALSE "
+    aux += "WHERE numero = {0}"
 
-    query = aux.format(bitacora.get_numControl())
+    query = aux.format(num)
 
     return conn.actualizar(query)
 
@@ -140,8 +140,46 @@ def actualizarDestino(bitacora: Bitacora):
     conn = Conn()
 
     aux = "UPDATE bitacora SET destino = '{0}' "
-    aux += "WHERE numControl = {1}"
+    aux += "WHERE numero = {1}"
 
     query = aux.format(bitacora.get_destino(), bitacora.get_numControl())
 
     return conn.actualizar(query)
+
+
+def listaEmpleados():
+    conn = Conn()
+
+    query = """SELECT 
+                numero,
+                nombrePila,
+                apdPaterno,
+                apdMaterno
+            FROM empleado 
+            """
+    lista = conn.lista(query)
+
+    if lista == 0 or len(lista) == 0:
+        return []
+
+    return lista
+
+
+def listaVehiculos():
+    conn = Conn()
+
+    query = """SELECT 
+                numSerie,
+                ma.nombre,
+                mo.nombre,
+                matricula
+            FROM vehiculo 
+            INNER JOIN marca ma ON vehiculo.marca = ma.codigo
+            INNER JOIN modelo mo ON vehiculo.modelo = mo.codigo
+            """
+    lista = conn.lista(query)
+
+    if lista == 0 or len(lista) == 0:
+        return []
+
+    return lista

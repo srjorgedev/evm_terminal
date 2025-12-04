@@ -13,6 +13,7 @@ import interface.vehiculos.fVehiculo as fVehiculo
 from interface.vehiculos import fVehiculo
 
 from db.conn import conn
+
 miConn = conn()
 #from interface.observacionymantenimiento import menu
 from interface.observacionymantenimiento import fMantenimiento
@@ -37,8 +38,9 @@ while True and opc1 != 9:
         case 1:
             opc11 = 100
 
-            while opc11 != 6:
-                opc11 = Val._SelectMenu("    Opcion: ", _Bitacoras.principal, 1, 6)
+            while opc11 != 5:
+                opc11 = Val._SelectMenu("    Opcion: ", _Bitacoras.principal,
+                                        1, 5)
                 match opc11:
                     case 1:
                         Fbitacoras.lista()
@@ -47,17 +49,16 @@ while True and opc1 != 9:
                     case 3:
                         Fbitacoras.registrarEntrada()
                     case 4:
-                        Fbitacoras.modificar()
-                    case 5:
                         Fbitacoras.eliminar()
-                    case 6:
+                    case 5:
                         print("   Saliendo...")
                         break
 
         case 2:
-            opc2 = 0 
+            opc2 = 0
             while opc2 != 5:
-                opc2 = Val.vOpciones("Ingrese una opción: ", 1, 5, menuv.menuVehiculos)
+                opc2 = Val.vOpciones("Ingrese una opción: ", 1, 5,
+                                     menuv.menuVehiculos)
                 match opc2:
                     case 1:
                         fVehiculo.listarVehiculos()
@@ -71,12 +72,12 @@ while True and opc1 != 9:
                         print("   Saliendo...")
                         break
 
-
         case 3:
             opc13 = 100
 
             while opc13 != 6:
-                opc13 = Val._SelectMenu("    Seleccione una opción: ", _Usuarios._Usuarios, 1, 6)
+                opc13 = Val._SelectMenu("    Seleccione una opción: ",
+                                        _Usuarios._Usuarios, 1, 6)
                 match opc13:
                     case 1:
                         fUsuarios.createUser()
@@ -91,17 +92,18 @@ while True and opc1 != 9:
                     case 6:
                         print("   Saliendo del Menu de Usuarios...")
 
-        case 4: # MANTENIMIENTO
-    # Llama al submenú completo de mantenimiento
+        case 4:  # MANTENIMIENTO
+            # Llama al submenú completo de mantenimiento
             fMantenimiento.menuMantenimientos()
-        case 5: # OBSERVACIONES
-    # Llama al submenú completo de observaciones
+        case 5:  # OBSERVACIONES
+            # Llama al submenú completo de observaciones
             fObservacion.menuObservaciones()
-        
+
         case 6:
             opc2 = 0
             while opc2 != 6:
-                opc2 = Val.vOpciones("Ingrese una opción: ", 1, 6, menus.menuSolicitudes)
+                opc2 = Val.vOpciones("Ingrese una opción: ", 1, 6,
+                                     menus.menuSolicitudes)
 
                 match opc2:
                     case 1:
@@ -109,7 +111,7 @@ while True and opc1 != 9:
                     case 2:
                         fSolicitudes.SolicitarDatos()
                     case 3:
-                        fSolicitudes.VerEstado() 
+                        fSolicitudes.VerEstado()
                     case 4:
                         fSolicitudes.modificarAsuntoSolicitud()
                     case 5:
@@ -118,7 +120,7 @@ while True and opc1 != 9:
                         fSolicitudes.eliminarSolicitud()
                     case 7:
                         print("Regresando...")
-        
+
         case 9:
             print("   Saliendo...")
             break
