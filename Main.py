@@ -115,6 +115,8 @@ while True and opc1 != 9:
                     case 5:
                         fSolicitudes.modificarEstadoSolicitud()
                     case 6:
+                        fSolicitudes.eliminarSolicitud()
+                    case 7:
                         print("Regresando...")
         
         case 9:
